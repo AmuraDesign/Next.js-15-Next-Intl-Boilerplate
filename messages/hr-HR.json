@@ -1,0 +1,12 @@
+{
+    "HomePage": {
+      "title": "Dobrodošli!",
+      "about": "Idi na About stranicu"
+    },
+    "Header": {
+      "navigation": {
+        "home": "Početna",
+        "about": "O nama"
+      }
+    }
+  }

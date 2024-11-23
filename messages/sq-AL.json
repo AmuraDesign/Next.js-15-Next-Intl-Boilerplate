@@ -1,0 +1,12 @@
+{
+    "HomePage": {
+      "title": "Përshëndetje!",
+      "about": "Shko tek faqja e about"
+    },
+    "Header": {
+      "navigation": {
+        "home": "Ballina",
+        "about": "Rreth nesh"
+      }
+    }
+  }

@@ -1,0 +1,12 @@
+{
+    "HomePage": {
+      "title": "Bienvenido!",
+      "about": "Ir a la página de about"
+    },
+    "Header": {
+      "navigation": {
+        "home": "Inicio",
+        "about": "Sobre nosotros"
+      }
+    }
+  }

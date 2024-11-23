@@ -1,0 +1,12 @@
+{
+    "HomePage": {
+      "title": "Merhaba Dünya!",
+      "about": "About sayfasına git"
+    },
+    "Header": {
+      "navigation": {
+        "home": "Ana Sayfa",
+        "about": "Hakkımızda"
+      }
+    }
+  }
