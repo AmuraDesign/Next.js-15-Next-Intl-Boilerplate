@@ -14,7 +14,8 @@ export default getRequestConfig(async ({requestLocale}) => {
     | "it-IT"
     | "fr-FR"
     | "hr-HR"
-    | "bs-BA")) {
+    | "bs-BA"
+    | "ar-SA")) {
     locale = routing.defaultLocale;
   }
   

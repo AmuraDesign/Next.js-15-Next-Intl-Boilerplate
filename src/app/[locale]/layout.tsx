@@ -16,7 +16,7 @@ export default async function LocaleLayout({
   const { locale } = resolvedParams;
 
   // Ensure the incoming `locale` is valid
-  if (!routing.locales.includes(locale as 'en-US' | 'de-DE' | 'de-CH' | 'de-AT' | 'es-ES' | 'fr-FR' | 'hr-HR' | 'bs-BA' | 'it-IT' | 'sq-AL' | 'tr-TR')) {
+  if (!routing.locales.includes(locale as 'en-US' | 'de-DE' | 'de-CH' | 'de-AT' | 'es-ES' | 'fr-FR' | 'hr-HR' | 'bs-BA' | 'it-IT' | 'sq-AL' | 'tr-TR' | 'ar-SA' | 'en-UK' )) {
     notFound();
   }
 
@@ -24,7 +24,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className="h-full antialiased" dir={locale.startsWith('ar') ? 'rtl' : 'ltr'}>
       <body className="min-h-screen bg-background text-foreground">
         <NextIntlClientProvider messages={messages}>
           <Header />
