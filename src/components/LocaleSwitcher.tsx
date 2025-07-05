@@ -22,7 +22,9 @@ export default function LocaleSwitcher() {
     'it-IT': 'Italiano',
     'fr-FR': 'Français',
     'hr-HR': 'Hrvatski',
-    'bs-BA': 'Bosanski'
+    'bs-BA': 'Bosanski',
+    'ar-SA': 'العربية'
+    
   };
 
   return (

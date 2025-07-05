@@ -12,7 +12,8 @@ export const routing = defineRouting({
       'it-IT',
       'fr-FR',
       'hr-HR',
-      'bs-BA'
+      'bs-BA',
+      'ar-SA'
     ],
   
     // Used when no locale matches
