@@ -1,12 +1,38 @@
 {
     "HomePage": {
       "title": "Welcome!",
-      "about": "Go to the about page"
+      "about": "Go to the about page",
+      "meta": {
+        "title": "Next.js 15 Next-Intl Boilerplate - Welcome",
+        "description": "A modern, production-ready boilerplate for creating multilingual Next.js 15 applications with comprehensive internationalization support.",
+        "ogImageTitle": "Welcome to Next.js 15",
+        "ogImageDescription": "A modern, production-ready boilerplate for creating multilingual Next.js 15 applications with comprehensive internationalization support.",
+        "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
+      }
     },
     "Header": {
       "navigation": {
         "home": "Home",
-        "about": "About"
+        "about": "About",
+        "openMenu": "Open menu",
+        "closeMenu": "Close menu"
+      }
+    },
+    "NotFoundPage": {
+      "title": "Page Not Found",
+      "description": "Sorry, the page you requested could not be found.",
+      "backToHome": "Back to Home"
+    },
+    "AboutPage": {
+      "title": "About Us",
+      "content": "Welcome to our About page! Here you can learn more about our company and our mission.",
+      "meta": {
+        "title": "About Us - Next.js 15 Next-Intl Boilerplate",
+        "description": "Learn more about our company and mission. Discover how we create modern multilingual Next.js applications.",
+        "ogTitle": "About Us - Next.js 15 Next-Intl Boilerplate",
+        "ogImageTitle": "About Us",
+        "ogImageDescription": "Learn more about our company and mission. Discover how we create modern multilingual Next.js applications.",
+        "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
       }
     }
 }

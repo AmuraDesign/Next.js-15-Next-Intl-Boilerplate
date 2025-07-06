@@ -1,12 +1,38 @@
 {
     "HomePage": {
       "title": "Dobrodošli!",
-      "about": "Idi na About stranicu"
+      "about": "Idi na About stranicu",
+      "meta": {
+        "title": "Next.js 15 Next-Intl Boilerplate - Dobrodošli",
+        "description": "Moderna i proizvodno spremna predloška za stvaranje višejezičnih Next.js 15 aplikacija s potpunom podrškom za internacionalizaciju.",
+        "ogImageTitle": "Dobrodošli u Next.js 15",
+        "ogImageDescription": "Moderna i proizvodno spremna predloška za stvaranje višejezičnih Next.js 15 aplikacija s potpunom podrškom za internacionalizaciju.",
+        "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
+      }
     },
     "Header": {
       "navigation": {
         "home": "Početna",
-        "about": "O nama"
+        "about": "O nama",
+        "openMenu": "Otvori meni",
+        "closeMenu": "Zatvori meni"
+      }
+    },
+    "NotFoundPage": {
+      "title": "Stranica nije pronađena",
+      "description": "Nažalost, tražena stranica nije pronađena.",
+      "backToHome": "Povratak na početnu"
+    },
+    "AboutPage": {
+      "title": "O nama",
+      "content": "Dobrodošli na našu stranicu O nama! Ovdje možete saznati više o našoj tvrtki i našoj misiji.",
+      "meta": {
+        "title": "O nama - Next.js 15 Next-Intl Boilerplate",
+        "description": "Saznajte više o našoj tvrtki i misiji. Otkrijte kako stvaramo moderne višejezične Next.js aplikacije.",
+        "ogTitle": "O nama - Next.js 15 Next-Intl Boilerplate",
+        "ogImageTitle": "O nama",
+        "ogImageDescription": "Saznajte više o našoj tvrtki i misiji. Otkrijte kako stvaramo moderne višejezične Next.js aplikacije.",
+        "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
       }
     }
 }

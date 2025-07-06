@@ -1,249 +1,511 @@
-# Next.js 15 + Next-Intl Boilerplate
+# Next.js 15 + next-intl Multi-Locale Boilerplate
 
-This repository serves as a boilerplate for creating a multilingual Next.js 15 project using the [`next-intl`](https://next-intl.vercel.app/) library for internationalization. The boilerplate also integrates **Tailwind CSS** for styling and includes a basic project setup for rapid development.
+## 🛠️ Tech Stack
 
-## Features
-
-- **Multilingual Support:**
-  - Preconfigured with multiple locales (e.g., `en-US`, `de-DE`, `fr-FR`, etc.).
-  - Dynamic routing for each locale.
-  - Locale switcher component.
-- **Next.js 15:** Built on the latest version of Next.js for optimal performance and features.
-- **React 19 (RC):** Uses the latest release candidate of React for future-proof development.
-- **Tailwind CSS Integration:** Preconfigured for utility-first styling.
-- **ESLint & TypeScript:** For code quality and type safety.
-- **Modern Directory Structure:** Organizes components, pages, and internationalization logic for clarity and scalability.
+- **Next.js 15.3+** (App Router)
+- **React 19**
+- **TypeScript 5**
+- **next-intl 4** – advanced internationalization
+- **Tailwind CSS 4**
+- **@headlessui/react** & **@heroicons/react** – accessible UI components & icons
+- **PostCSS 8** – for Tailwind
+- **ESLint 9** + `eslint-config-next` – code quality & formatting
+- **Cookie-based locale persistence**
+- **Automatic SEO & Open Graph (OG) image generation**
+- **Automatic multilingual sitemap generation** with hreflang support
+- **Full SSG/SSR/ISR support**
 
 ---
 
-## Getting Started
+A professional, modern starter for **Next.js 15** apps with **fully dynamic internationalization (i18n)** using [next-intl](https://next-intl-docs.vercel.app/), SEO best practices, localizable metadata, Open Graph images per page & locale, and robust 404/catch-all handling.
+Ideal for multilingual SaaS, corporate sites, and any app where localization, SEO, and user experience matter.
+
+## ✨ Features
+
+- **Full SSR/SSG support** using Next.js App Router (15.x)
+- **Dynamic locale subpaths** (e.g., `/de-CH/ueber-uns`, `/en-US/about`, `/fr-FR/a-propos`, `/ar-SA/عنّا`)
+- **Locale-aware navigation** and links everywhere, using next-intl
+- **SEO: Localized metadata** (`generateMetadata` API) for every page
+- **Dynamic Open Graph images** (OG) – rendered per page and per locale, with translation
+- **Automatic language detection** and locale redirect via middleware (incl. cookie support)
+- **Custom 404 page** (localized), plus robust `[...rest]` catch-all route
+- **Locale switcher** that persists preference in a cookie
+- **Responsive navigation:** desktop & mobile menus with translation
+- **Production-ready folder structure:** easy to extend with new pages and locales
+- **TypeScript**, ESLint and Tailwind CSS (v4)
+- **All translation messages in `/messages` as simple JSON** (per locale)
+- **RTL support** for Arabic language
+- **13 pre-configured locales** with proper translations
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-Ensure you have the following installed on your development machine:
+- **Node.js 18+** (required for Next.js 15)
+- **pnpm** (recommended), npm, or yarn
 
-- **Node.js** (v18 or higher recommended)
-- **npm**, **yarn**, **pnpm**, or **bun**
-
-### Installation
-
-Clone the repository and install dependencies:
+### 1. Clone and Install
 
 ```bash
-git clone <repository-url>
-cd nextjs
-npm install
-# or
-yarn install
-# or
-pnpm install
-# or
-bun install
+git clone https://github.com/AmuraDesign/Next.js-15-Next-Intl-Boilerplate
+cd Next.js-15-Next-Intl-Boilerplate
+pnpm install   # or npm install or yarn
 ```
 
-### Running the Development Server
-
-Start the development server:
+### 2. Start Development Server
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
-Open your browser and visit [http://localhost:3000](http://localhost:3000) to see the application.
+Open [http://localhost:3000](http://localhost:3000). You'll be auto-redirected to your preferred locale, and can switch between all configured languages.
 
----
+### 3. Available Scripts
 
-## Directory Structure
-
-Here’s an overview of the key files and directories in the project:
-
-```
-nextjs/
-├── messages/             # JSON files for locale translations
-├── src/
-│   ├── app/              # Next.js app directory
-│   │   ├── [locale]/     # Dynamic locale-based routing
-│   │   ├── components/   # Reusable UI components
-│   │   └── globals.css   # Tailwind CSS global styles
-│   ├── i18n/             # Internationalization logic (next-intl)
-│   ├── middleware.ts     # Middleware for locale-based routing
-│   └── pages/            # (Optional) Custom Next.js pages (if required)
-├── .eslintrc.json        # ESLint configuration
-├── next.config.ts        # Next.js configuration with next-intl plugin
-├── tailwind.config.ts    # Tailwind CSS configuration
-├── tsconfig.json         # TypeScript configuration
-└── README.md             # You are here!
+```bash
+pnpm dev          # Start development server with Turbopack
+pnpm build        # Build for production (also generates sitemap)
+pnpm start        # Start production server
+pnpm lint         # Run ESLint
+pnpm lint:fix     # Fix ESLint errors automatically
+pnpm type-check   # Run TypeScript type checking
 ```
 
 ---
 
-## Internationalization (i18n)
+## 🌐 Supported Locales
 
-This boilerplate uses **next-intl** for i18n support. Here’s how it works:
+The boilerplate comes with **13 pre-configured locales**:
 
-### Adding Translations
+| Locale  | Language | Country        | Example URL             |
+| ------- | -------- | -------------- | ----------------------- |
+| `de-DE` | German   | Germany        | `/de-DE/ueber-uns`      |
+| `de-CH` | German   | Switzerland    | `/de-CH/ueber-uns`      |
+| `de-AT` | German   | Austria        | `/de-AT/ueber-uns`      |
+| `en-US` | English  | United States  | `/en-US/about`          |
+| `en-UK` | English  | United Kingdom | `/en-UK/about`          |
+| `fr-FR` | French   | France         | `/fr-FR/a-propos`       |
+| `it-IT` | Italian  | Italy          | `/it-IT/chi-siamo`      |
+| `es-ES` | Spanish  | Spain          | `/es-ES/sobre-nosotros` |
+| `tr-TR` | Turkish  | Turkey         | `/tr-TR/hakkimizda`     |
+| `sq-AL` | Albanian | Albania        | `/sq-AL/rreth-nesh`     |
+| `hr-HR` | Croatian | Croatia        | `/hr-HR/o-nama`         |
+| `bs-BA` | Bosnian  | Bosnia         | `/bs-BA/o-nama`         |
+| `ar-SA` | Arabic   | Saudi Arabia   | `/ar-SA/عنّا`           |
 
-1. Translation files are located in the `messages/` directory.
-2. Each locale has its own JSON file (e.g., `en-US.json`, `de-DE.json`).
-3. Add your translations to these files:
+---
+
+## 🗂️ Folder Structure
+
+```
+src/
+  app/
+    [locale]/
+      about/
+        opengraph-image.tsx    # OG image for /about (dynamic per locale)
+        page.tsx               # About page, fully localized, with SEO metadata
+      [...rest]/
+        page.tsx               # Catch-all, triggers 404 for unknown subpages
+      not-found.tsx            # Localized 404 page
+      opengraph-image.tsx      # OG image for homepage
+      layout.tsx               # Locale layout, loads translations & sets direction
+      page.tsx                 # Home page, fully localized, with SEO metadata
+  components/
+    Header.tsx                 # Sticky app bar with navigation & locale switcher
+    LocaleSwitcher.tsx         # Dropdown for changing language (with cookie)
+    MobileMenu.tsx             # Mobile nav menu (hamburger)
+    Navigation.tsx             # Desktop navigation
+  i18n/
+    next-sitemap.routingData.js # Routing data for sitemap generation
+    request.ts                 # Loads messages for current locale (SSR)
+    routing.ts                 # Defines locales, pathnames, i18n navigation
+  middleware.ts                # Redirects and enforces locale paths
+  globals.css                  # Global styles (Tailwind CSS 4)
+messages/
+  de-DE.json                   # German (Germany) translations
+  en-US.json                   # English (US) translations
+  fr-FR.json                   # French translations
+  # ... 10 more locale files
+next-sitemap.config.js         # Sitemap configuration
+next.config.ts                 # Next.js config with next-intl plugin
+postcss.config.mjs             # PostCSS config for Tailwind
+tsconfig.json                  # TypeScript configuration
+package.json                   # Dependencies and scripts
+public/
+  robots.txt                   # Generated robots.txt with sitemap reference
+  sitemap.xml                  # Generated sitemap index
+  sitemap-0.xml               # Generated main sitemap with hreflang tags
+```
+
+---
+
+## 🌐 Internationalization (i18n)
+
+### Configuration
+
+- **Locales** are defined in [`src/i18n/routing.ts`](src/i18n/routing.ts)
+- **Localized URLs** (e.g., `/de-CH/ueber-uns`, `/en-US/about`) are mapped in the same file via the `pathnames` property
+- **Translations** for each language are stored in `/messages/{locale}.json`
+- **Translation hooks** (`useTranslations`) and the i18n-aware `Link` component are used everywhere
+
+### Locale Detection and Persistence
+
+- Users are redirected to their preferred locale (from cookie or browser) via [`src/middleware.ts`](src/middleware.ts)
+- Changing the language in the `LocaleSwitcher` sets a `NEXT_LOCALE` cookie for one year
+- The middleware handles all locale routing automatically
+
+### Adding a New Locale
+
+1. **Add your locale code** to `src/i18n/routing.ts` in the `locales` array
+2. **Map pathnames** for new routes/pages as needed
+3. **Create** a new translation file in `/messages/`, e.g. `es-ES.json`
+4. **Add translation keys** as needed (see example files)
+5. **Add locale data** to `LocaleSwitcher.tsx` (name and flag)
+
+### Translation Structure
+
+Each locale file follows this structure:
 
 ```json
 {
   "HomePage": {
     "title": "Welcome!",
-    "about": "Go to the about page"
+    "about": "Go to the about page",
+    "meta": {
+      "title": "Page Title",
+      "description": "Page description",
+      "ogImageTitle": "OG Image Title",
+      "ogImageDescription": "OG Image Description",
+      "ogImageBrand": "Brand Name"
+    }
   },
   "Header": {
     "navigation": {
       "home": "Home",
-      "about": "About"
+      "about": "About",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu"
     }
   }
 }
 ```
 
-### Dynamic Routing for Locales
-
-The `[locale]` dynamic route handles locale-based routing. For example:
-
-- `/en-US/` for English (US)
-- `/de-DE/` for German (Germany)
-
-#### Middleware Configuration
-
-The `middleware.ts` file ensures only supported locales are routed:
-
-```typescript
-import createMiddleware from "next-intl/middleware";
-import { routing } from "./i18n/routing";
-
-export default createMiddleware(routing);
-
-export const config = {
-  matcher: ["/", "/(de-DE|en-US|fr-FR|...)/:path*"],
-};
-```
-
-### Locale Switcher
-
-The `LocaleSwitcher` component allows users to toggle between locales:
-
-```tsx
-<Menu.Items>
-  {routing.locales.map((locale) => (
-    <Menu.Item key={locale}>
-      <button onClick={() => router.replace(pathname, { locale })}>
-        {localeNames[locale]}
-      </button>
-    </Menu.Item>
-  ))}
-</Menu.Items>
-```
-
 ---
 
-## Styling with Tailwind CSS
+## 🧑‍💻 Adding New Pages
 
-The project includes **Tailwind CSS** for utility-first styling.
+### 1. Create the Page Component
 
-### Customization
-
-Modify `tailwind.config.ts` to extend the default theme or add custom configurations:
+Create a new folder in `src/app/[locale]/` for your page:
 
 ```typescript
-export default {
-  theme: {
-    extend: {
-      colors: {
-        background: "#f0f0f0",
-        foreground: "#333",
-      },
-    },
+// src/app/[locale]/contact/page.tsx
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "ContactPage" });
+
+  return {
+    title: t("meta.title"),
+    description: t("meta.description"),
+    // ... other metadata
+  };
+}
+
+export default function ContactPage() {
+  const t = useTranslations("ContactPage");
+  return (
+    <div>
+      <h1>{t("title")}</h1>
+      <p>{t("content")}</p>
+    </div>
+  );
+}
+```
+
+### 2. Add Route Mapping
+
+Update `src/i18n/routing.ts`:
+
+```typescript
+pathnames: {
+  '/': { /* ... */ },
+  '/about': { /* ... */ },
+  '/contact': {
+    'de-DE': '/kontakt',
+    'en-US': '/contact',
+    'fr-FR': '/contact',
+    // ... all other locales
+  }
+}
+```
+
+### 3. Add Navigation Links
+
+Update `src/components/Navigation.tsx` and `src/components/MobileMenu.tsx`:
+
+```typescript
+<Link href="/contact" className="...">
+  {t("contact")}
+</Link>
+```
+
+### 4. Add Translations
+
+Add to all locale files in `/messages/`:
+
+```json
+{
+  "ContactPage": {
+    "title": "Contact Us",
+    "content": "Get in touch with us...",
+    "meta": {
+      "title": "Contact Us - Your Site",
+      "description": "Get in touch with us..."
+    }
+  },
+  "Header": {
+    "navigation": {
+      "contact": "Contact"
+    }
+  }
+}
+```
+
+### 5. Update Sitemap (Optional)
+
+Add to `src/i18n/next-sitemap.routingData.js`:
+
+```javascript
+const pathnames = {
+  "/contact": {
+    "de-DE": "/kontakt",
+    "en-US": "/contact",
+    // ... all locales
   },
 };
 ```
 
-Global styles are defined in `globals.css`:
+---
 
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+## 🔎 SEO & Metadata
+
+### Per-Page SEO
+
+- Uses **`generateMetadata`** (Next.js 15+) for per-locale, per-page SEO tags
+- **Open Graph (OG) images** are generated **dynamically** per page and locale
+- Twitter Card metadata included as well
+
+### Open Graph Images
+
+Each page can have its own dynamic OG image:
+
+```typescript
+// src/app/[locale]/contact/opengraph-image.tsx
+import { ImageResponse } from "next/og";
+import { getTranslations } from "next-intl/server";
+
+export const size = { width: 1200, height: 630 };
+export const contentType = "image/png";
+
+export default async function OGImage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "ContactPage",
+  });
+
+  return new ImageResponse(
+    (
+      <div
+        style={
+          {
+            /* ... */
+          }
+        }
+      >
+        <div>{t("meta.ogImageTitle")}</div>
+        <div>{t("meta.ogImageDescription")}</div>
+      </div>
+    ),
+    size
+  );
+}
 ```
 
 ---
 
-## Scripts
+## 🗺️ Sitemap & SEO Setup
 
-The following npm scripts are available:
+The boilerplate uses **next-sitemap** for automatic generation of multilingual sitemaps with complete hreflang support.
 
-- **`npm run dev`**: Start the development server.
-- **`npm run build`**: Build the project for production.
-- **`npm run start`**: Start the production server.
-- **`npm run lint`**: Run ESLint checks.
+### Configuration
 
----
+**`next-sitemap.config.js`** - Main configuration file:
 
-## Deployment
+- Automatically generates all localized URLs based on routing data
+- Creates hreflang tags for each language
+- Configures sitemap size, change frequency, and priority
 
-Deploy the project easily using **Vercel**:
+**`src/i18n/next-sitemap.routingData.js`** - Routing data for sitemap:
 
-1. Link your repository to Vercel.
-2. Push your code to the main branch.
-3. Vercel will automatically build and deploy your project.
+- Defines all supported locales
+- Maps base paths to localized URLs
 
----
+### Automatic Generation
 
-## Tech Stack
+The sitemap is automatically generated after each build:
 
-- **Next.js 15**: React framework for production-ready apps.
-- **Next-Intl**: Seamless i18n integration.
-- **React 19 RC**: Latest React features and improvements.
-- **Tailwind CSS**: Utility-first CSS framework.
-- **TypeScript**: For type-safe development.
+```bash
+pnpm build  # Also automatically generates the sitemap
+```
 
----
+**Generated files:**
 
-## Contributing
+- `public/sitemap.xml` - Sitemap index (references sitemap-0.xml)
+- `public/sitemap-0.xml` - Main sitemap with all URLs and hreflang tags
+- `public/robots.txt` - Robots file with sitemap reference
 
-Contributions are welcome! If you find a bug or have an idea for a new feature:
+### Environment Variables
 
-1. Fork the repository.
-2. Create a new branch: `git checkout -b feature/my-feature`.
-3. Commit your changes: `git commit -m "Add my feature"`.
-4. Push the branch: `git push origin feature/my-feature`.
-5. Open a pull request.
+**`.env.local`** (optional):
 
----
+```bash
+NEXT_PUBLIC_SITE_URL=https://yourdomain.com
+```
 
-## Troubleshooting
-
-### Common Issues
-
-- **Module Not Found**: Run `npm install` to install missing dependencies.
-- **Tailwind CSS Not Working**: Ensure your `tailwind.config.ts` includes the correct `content` paths.
-- **Invalid Locale**: Verify that the locale is defined in `messages/` and `routing.ts`.
-
-### Debugging
-
-Use `console.log` or debugging tools like **VS Code Debugger** or **Chrome DevTools**.
+If not set, `http://localhost:3000` is used as default.
 
 ---
 
-## Learn More
+## 📱 Responsive Navigation
+
+- **Desktop navigation**: Always visible on `md+` screens, fully localized
+- **Mobile menu**: Hamburger button with a translated menu, closes on link click
+- **Locale switcher**: Dropdown, shows flag and language, sets cookie and navigates instantly
+
+---
+
+## 🛡️ 404 & Catch-All
+
+- **Custom 404 page** (localized) at `[locale]/not-found.tsx`
+- **Catch-all route** (`[...rest]/page.tsx`) that triggers the 404 for any unknown subroutes under any locale
+
+---
+
+## 🖼️ Open Graph Image Customization
+
+- Each route/locale can have its own Open Graph image
+- The image is fully localizable (translations are fetched at runtime)
+- For RTL (e.g. Arabic), adjust OG image rendering as needed
+
+---
+
+## 🔧 Configuration Files
+
+### Next.js Configuration (`next.config.ts`)
+
+```typescript
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin();
+
+const nextConfig = {};
+
+export default withNextIntl(nextConfig);
+```
+
+### TypeScript Configuration (`tsconfig.json`)
+
+Includes path mapping for `@/*` to `./src/*` and Next.js specific settings.
+
+### PostCSS Configuration (`postcss.config.mjs`)
+
+Configured for Tailwind CSS 4:
+
+```javascript
+const config = { plugins: { "@tailwindcss/postcss": {} } };
+export default config;
+```
+
+---
+
+## 💡 Best Practices
+
+- **All navigation and URLs** use next-intl's `Link` and helpers – no hardcoded locale strings!
+- **Locale is enforced in the URL** via middleware (no fallback to non-locale root)
+- **All content, navigation, and metadata** are translatable and locale-aware
+- **All translation keys** are type-safe (thanks to TypeScript and next-intl)
+- **SEO and social sharing** work for every language, everywhere
+- **Use namespaces** in translation files for better organization
+- **Always await params** in Next.js 15 App Router functions
+
+---
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Set environment variables if needed
+4. Deploy!
+
+### Other Platforms
+
+The boilerplate works with any platform that supports Next.js:
+
+- Netlify
+- Railway
+- DigitalOcean App Platform
+- AWS Amplify
+- etc.
+
+---
+
+## 🔗 Resources
 
 - [Next.js Documentation](https://nextjs.org/docs)
-- [Next-Intl Documentation](https://next-intl.vercel.app/)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [next-intl Documentation](https://next-intl-docs.vercel.app/)
+- [next-sitemap Documentation](https://github.com/iamvishnusankar/next-sitemap)
+- [Open Graph image API](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image)
+- [Vercel - Internationalized Routing](https://vercel.com/docs/concepts/internationalization/)
+- [Google - hreflang Best Practices](https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites)
+- [Tailwind CSS 4 Documentation](https://tailwindcss.com/docs)
 
 ---
 
-## License
+## 🤝 Contributing
 
-This project is licensed under the MIT License.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 🧑‍🎨 Credits
+
+Made by [AmuraDesign.ch](https://amuradesign.ch)
+Fullstack Web Developer, Bern, Switzerland
+
+**Special thanks to [@kvcli](https://github.com/kvcli) for adding Arabic language support and RTL functionality.**
+
+---
+
+## 📄 License
+
+MIT — see [LICENSE](LICENSE)

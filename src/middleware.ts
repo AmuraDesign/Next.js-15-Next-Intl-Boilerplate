@@ -1,9 +1,22 @@
+// src/middleware.ts
+
+// Import the Next.js middleware helper from next-intl
 import createMiddleware from 'next-intl/middleware';
-import {routing} from './i18n/routing';
- 
+
+// Import your routing configuration which contains all locales, defaultLocale, and pathnames
+import { routing } from './i18n/routing';
+
+// Export the middleware created by next-intl
+// This middleware will handle locale detection, redirects, and internationalized routing automatically
 export default createMiddleware(routing);
- 
+
+// Next.js middleware configuration object
 export const config = {
-    // Match only internationalized pathnames
-    matcher: ['/', '/(de-DE|de-CH|de-AT|en-US|en-UK|es-ES|tr-TR|sq-AL|it-IT|fr-FR|hr-HR|bs-BA|ar-SA)/:path*']
-  };
+  matcher: [
+    '/', // Match the root path explicitly
+
+    // Match all paths except for API routes, Next.js internals, static assets, favicon, and sitemap.xml
+    // This prevents middleware from rewriting or interfering with these special paths
+    '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|sitemap-0.xml).*)',
+  ],
+};

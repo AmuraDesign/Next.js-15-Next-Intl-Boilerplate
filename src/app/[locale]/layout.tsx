@@ -1,10 +1,13 @@
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import { notFound } from 'next/navigation';
-import { routing } from '@/i18n/routing';
-import Header from '../../components/Header';
-import '../globals.css';
+// src/app/[locale]/layout.tsx
 
+import { NextIntlClientProvider } from 'next-intl';      // Provider for translations context
+import { getMessages } from 'next-intl/server';          // Server helper to load translations
+import { notFound } from 'next/navigation';              // Next.js API for 404 handling
+import { routing } from '@/i18n/routing';                // Locale config
+import Header from '../../components/Header';            // Main app header
+import '../globals.css';                                // Global styles (Tailwind, etc.)
+
+// Main layout for all localized pages ([locale] segment)
 export default async function LocaleLayout({
   children,
   params
@@ -12,20 +15,25 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const resolvedParams = await params; // Await the params object
-  const { locale } = resolvedParams;
+  // Extract the locale from the route params (async for Next.js App Router)
+  const { locale } = await params;
 
-  // Ensure the incoming `locale` is valid
-  if (!routing.locales.includes(locale as 'en-US' | 'de-DE' | 'de-CH' | 'de-AT' | 'es-ES' | 'fr-FR' | 'hr-HR' | 'bs-BA' | 'it-IT' | 'sq-AL' | 'tr-TR' | 'ar-SA' | 'en-UK' )) {
+  // If the locale is not supported, trigger a 404
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound();
   }
 
-  // Fetch messages for the locale
-  const messages = await getMessages();
+  // Load the messages for the selected locale
+  const messages = await getMessages({ locale });
 
   return (
-    <html lang={locale} className="h-full antialiased" dir={locale.startsWith('ar') ? 'rtl' : 'ltr'}>
+    <html
+      lang={locale}                        // Set the HTML lang attribute for SEO and accessibility
+      className="h-full antialiased"
+      dir={locale.startsWith('ar') ? 'rtl' : 'ltr'} // Set text direction (RTL for Arabic)
+    >
       <body className="min-h-screen bg-background text-foreground">
+        {/* Provide all translations to the React tree */}
         <NextIntlClientProvider messages={messages}>
           <Header />
           <main className="pt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

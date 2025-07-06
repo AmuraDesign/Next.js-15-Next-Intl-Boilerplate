@@ -1,12 +1,38 @@
 {
     "HomePage": {
       "title": "أهلا وسهلا!",
-      "about": "اذهب إلى صفحة حول"
+      "about": "اذهب إلى صفحة حول",
+      "meta": {
+        "title": "Next.js 15 Next-Intl Boilerplate - مرحباً بكم",
+        "description": "قالب حديث وجاهز للإنتاج لإنشاء تطبيقات Next.js 15 متعددة اللغات مع دعم شامل للتدويل.",
+        "ogImageTitle": "Welcome to Next.js 15",
+        "ogImageDescription": "A modern, production-ready boilerplate for creating multilingual Next.js 15 applications with comprehensive internationalization support.",
+        "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
+      }
     },
     "Header": {
       "navigation": {
         "home": "الصفحة الرئيسية",
-        "about": "حول"
+        "about": "حول",
+        "openMenu": "فتح القائمة",
+        "closeMenu": "إغلاق القائمة"
+      }
+    },
+    "NotFoundPage": {
+      "title": "الصفحة غير موجودة",
+      "description": "عذراً، الصفحة المطلوبة غير موجودة.",
+      "backToHome": "العودة إلى الصفحة الرئيسية"
+    },
+    "AboutPage": {
+      "title": "حولنا",
+      "content": "مرحباً بكم في صفحة حولنا! هنا يمكنكم معرفة المزيد عن شركتنا ومهمتنا.",
+      "meta": {
+        "title": "حولنا - Next.js 15 Next-Intl Boilerplate",
+        "description": "اعرف المزيد عن شركتنا ومهمتنا. اكتشف كيف ننشئ تطبيقات Next.js متعددة اللغات الحديثة.",
+        "ogTitle": "حولنا - Next.js 15 Next-Intl Boilerplate",
+        "ogImageTitle": "About Us",
+        "ogImageDescription": "Learn more about our company and mission. Discover how we create modern multilingual Next.js applications.",
+        "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
       }
     }
 }

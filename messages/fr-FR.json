@@ -1,12 +1,38 @@
 {
     "HomePage": {
       "title": "Bienvenue!",
-      "about": "Aller à la page de about"
+      "about": "Aller à la page de about",
+      "meta": {
+        "title": "Next.js 15 Next-Intl Boilerplate - Bienvenue",
+        "description": "Un boilerplate moderne et prêt pour la production pour créer des applications Next.js 15 multilingues avec un support complet d'internationalisation.",
+        "ogImageTitle": "Bienvenue sur Next.js 15",
+        "ogImageDescription": "Un boilerplate moderne et prêt pour la production pour créer des applications Next.js 15 multilingues avec un support complet d'internationalisation.",
+        "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
+      }
     },
     "Header": {
       "navigation": {
         "home": "Accueil",
-        "about": "À propos"
+        "about": "À propos",
+        "openMenu": "Ouvrir le menu",
+        "closeMenu": "Fermer le menu"
+      }
+    },
+    "NotFoundPage": {
+      "title": "Page non trouvée",
+      "description": "Désolé, la page demandée n'a pas pu être trouvée.",
+      "backToHome": "Retour à l'accueil"
+    },
+    "AboutPage": {
+      "title": "À propos de nous",
+      "content": "Bienvenue sur notre page À propos ! Ici, vous pouvez en apprendre davantage sur notre entreprise et notre mission.",
+      "meta": {
+        "title": "À propos de nous - Next.js 15 Next-Intl Boilerplate",
+        "description": "En savoir plus sur notre entreprise et notre mission. Découvrez comment nous créons des applications Next.js multilingues modernes.",
+        "ogTitle": "À propos de nous - Next.js 15 Next-Intl Boilerplate",
+        "ogImageTitle": "À propos de nous",
+        "ogImageDescription": "En savoir plus sur notre entreprise et notre mission. Découvrez comment nous créons des applications Next.js multilingues modernes.",
+        "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
       }
     }
   }

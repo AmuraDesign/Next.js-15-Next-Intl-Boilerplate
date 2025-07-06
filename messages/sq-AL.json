@@ -1,12 +1,38 @@
 {
     "HomePage": {
       "title": "Përshëndetje!",
-      "about": "Shko tek faqja e about"
+      "about": "Shko tek faqja e about",
+      "meta": {
+        "title": "Next.js 15 Next-Intl Boilerplate - Mirë se vini",
+        "description": "Një boilerplate modern dhe i gatshëm për prodhim për krijimin e aplikacioneve shumëgjuhëshe Next.js 15 me mbështetje gjithëpërfshirëse të ndërkombëtarizimit.",
+        "ogImageTitle": "Mirë se vini në Next.js 15",
+        "ogImageDescription": "Një boilerplate modern dhe i gatshëm për prodhim për krijimin e aplikacioneve shumëgjuhëshe Next.js 15 me mbështetje gjithëpërfshirëse të ndërkombëtarizimit.",
+        "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
+      }
     },
     "Header": {
       "navigation": {
         "home": "Ballina",
-        "about": "Rreth nesh"
+        "about": "Rreth nesh",
+        "openMenu": "Hap menunë",
+        "closeMenu": "Mbyll menunë"
+      }
+    },
+    "NotFoundPage": {
+      "title": "Faqja nuk u gjet",
+      "description": "Na vjen keq, faqja e kërkuar nuk u gjet.",
+      "backToHome": "Kthehu në ballinë"
+    },
+    "AboutPage": {
+      "title": "Rreth nesh",
+      "content": "Mirë se vini në faqen tonë Rreth nesh! Këtu mund të mësoni më shumë për kompaninë tonë dhe misionin tonë.",
+      "meta": {
+        "title": "Rreth nesh - Next.js 15 Next-Intl Boilerplate",
+        "description": "Mësoni më shumë për kompaninë tonë dhe misionin tonë. Zbuloni se si krijojmë aplikacione moderne shumëgjuhëshe Next.js.",
+        "ogTitle": "Rreth nesh - Next.js 15 Next-Intl Boilerplate",
+        "ogImageTitle": "Rreth nesh",
+        "ogImageDescription": "Mësoni më shumë për kompaninë tonë dhe misionin tonë. Zbuloni se si krijojmë aplikacione moderne shumëgjuhëshe Next.js.",
+        "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
       }
     }
   }
