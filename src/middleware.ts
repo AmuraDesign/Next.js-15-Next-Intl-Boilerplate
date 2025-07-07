@@ -17,6 +17,6 @@ export const config = {
 
     // Match all paths except for API routes, Next.js internals, static assets, favicon, and sitemap.xml
     // This prevents middleware from rewriting or interfering with these special paths
-    '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|sitemap-0.xml).*)',
+    '/((?!api|_next/static|_next/image|icon|favicon.ico|sitemap.xml|sitemap-0.xml).*)',
   ],
 };

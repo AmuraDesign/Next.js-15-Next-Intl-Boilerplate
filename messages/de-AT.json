@@ -47,13 +47,13 @@
       "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
     }
   },
-  "ThemeSelector": {
-    "default": "Standard",
-    "nord": "Nord",
-    "sakura": "Sakura",
-    "midnight": "Mitternacht",
-    "earthy": "Erdig",
-    "dark": "Dunkel",
-    "changeTheme": "Theme wechseln"
-  }
+      "ThemeSelector": {
+      "system": "System",
+      "nord": "Nord",
+      "sakura": "Sakura",
+      "midnight": "Mitternacht",
+      "earthy": "Erdig",
+      "dark": "Dunkel",
+      "changeTheme": "Theme wechseln"
+    }
 }

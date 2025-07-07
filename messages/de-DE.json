@@ -48,7 +48,7 @@
       }
     },
     "ThemeSelector": {
-      "default": "Standard",
+      "system": "System",
       "nord": "Nord",
       "sakura": "Sakura",
       "midnight": "Mitternacht",

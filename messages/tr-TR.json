@@ -48,7 +48,7 @@
     }
   },
   "ThemeSelector": {
-    "default": "Varsayılan",
+    "system": "Sistem",
     "nord": "Nord",
     "sakura": "Sakura",
     "midnight": "Gece Yarısı",

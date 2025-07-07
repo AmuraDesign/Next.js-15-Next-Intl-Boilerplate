@@ -56,5 +56,14 @@
     --color-accent: #22d3ee;
     --color-muted: #27272a;
   }
-
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-background: #18181b;
+    --color-foreground: #e4e4e7;
+    --color-primary: #2563eb;
+    --color-secondary: #a21caf;
+    --color-accent: #22d3ee;
+    --color-muted: #27272a;
+  }
 }

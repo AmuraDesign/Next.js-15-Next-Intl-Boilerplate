@@ -11,14 +11,15 @@
 - **PostCSS 8** – for Tailwind
 - **ESLint 9** + `eslint-config-next` – code quality & formatting
 - **Cookie-based locale persistence**
-- **Theme system** with 6 pre-configured themes (default, nord, sakura, midnight, earthy, dark)
+- **Theme system** with system theme detection and 6 pre-configured themes
+- **PWA-ready** with adaptive favicons and web app manifest
 - **Automatic SEO & Open Graph (OG) image generation**
 - **Automatic multilingual sitemap generation** with hreflang support
 - **Full SSG/SSR/ISR support** with `generateStaticParams` and `dynamic = 'auto'`
 
 ---
 
-A professional, modern starter for **Next.js 15** apps with **fully dynamic internationalization (i18n)** using [next-intl](https://next-intl-docs.vercel.app/), SEO best practices, localizable metadata, Open Graph images per page & locale, theme system, and robust 404/catch-all handling.
+A professional, modern starter for **Next.js 15** apps with **fully dynamic internationalization (i18n)** using [next-intl](https://next-intl-docs.vercel.app/), SEO best practices, localizable metadata, Open Graph images per page & locale, advanced theme system with system detection, PWA capabilities, and robust 404/catch-all handling.
 Ideal for multilingual SaaS, corporate sites, and any app where localization, SEO, user experience, and theming matter.
 
 ## ✨ Features
@@ -26,13 +27,15 @@ Ideal for multilingual SaaS, corporate sites, and any app where localization, SE
 - **Full SSR/SSG support** using `generateStaticParams` and `dynamic = 'auto'`, which enables static generation, aber automatisch auf SSR zurückfällt, wenn es nötig ist (z.B. für übersetzte Metadaten oder dynamisches SEO). So ist die Seite immer optimal schnell und flexibel – ohne manuelle Anpassung.
 - **Dynamic locale subpaths** (e.g., `/de-CH/ueber-uns`, `/en-US/about`, `/fr-FR/a-propos`, `/ar-SA/عنّا`)
 - **Locale-aware navigation** and links everywhere, using next-intl
-- **Theme system** with 6 beautiful themes and persistent localStorage storage
+- **Advanced theme system** with system theme detection (follows OS light/dark mode) and 6 beautiful themes with persistent localStorage storage
+- **PWA-ready** with adaptive favicons, web app manifest, and touch icons for all devices
+- **Adaptive favicons** for light/dark mode with automatic system detection
 - **SEO: Localized metadata** (`generateMetadata` API) for every page
 - **Dynamic Open Graph images** (OG) – rendered per page and per locale, with translation
 - **Automatic language detection** and locale redirect via middleware (incl. cookie support)
 - **Custom 404 page** (localized), plus robust `[...rest]` catch-all route
 - **Locale switcher** that persists preference in a cookie
-- **Theme selector** with visual indicators and persistent storage
+- **Theme selector** with visual indicators, system detection, and persistent storage
 - **Responsive navigation:** desktop & mobile menus with translation
 - **Production-ready folder structure:** easy to extend with new pages and locales
 - **TypeScript**, ESLint and Tailwind CSS (v4)
@@ -102,31 +105,67 @@ The boilerplate comes with **13 pre-configured locales**:
 
 ## 🎨 Theme System
 
-The boilerplate includes a comprehensive theme system with **6 pre-configured themes**:
+The boilerplate includes a comprehensive theme system with **system theme detection** and **6 pre-configured themes**:
 
-| Theme      | Description               | Visual Style           |
-| ---------- | ------------------------- | ---------------------- |
-| `default`  | Clean, modern light theme | Blue accent colors     |
-| `nord`     | Arctic-inspired theme     | Cyan and cool tones    |
-| `sakura`   | Soft, pink-inspired theme | Pink and gentle colors |
-| `midnight` | Deep, rich dark theme     | Purple and dark tones  |
-| `earthy`   | Natural, warm theme       | Amber and earth tones  |
-| `dark`     | Classic dark theme        | Gray and blue accents  |
+| Theme      | Description                | Visual Style           |
+| ---------- | -------------------------- | ---------------------- |
+| `system`   | Follows OS light/dark mode | Adaptive system theme  |
+| `nord`     | Arctic-inspired theme      | Cyan and cool tones    |
+| `sakura`   | Soft, pink-inspired theme  | Pink and gentle colors |
+| `midnight` | Deep, rich dark theme      | Purple and dark tones  |
+| `earthy`   | Natural, warm theme        | Amber and earth tones  |
+| `dark`     | Classic dark theme         | Gray and blue accents  |
 
 ### Features:
 
+- **System theme detection** - Automatically follows OS light/dark mode preferences
 - **Persistent storage** via localStorage
 - **Visual indicators** with color-coded theme previews
 - **Hydration-safe** implementation
 - **Responsive design** (text hidden on mobile)
 - **Theme-aware styling** using CSS variables
 - **Smooth transitions** between themes
+- **CSS `prefers-color-scheme`** media query support for automatic dark mode
 
 ### Adding Custom Themes:
 
 1. Add theme definition to `src/components/globals/header/ThemeSelector.tsx`
 2. Add translations to all locale files in `/messages/`
 3. Define CSS variables for your theme in `src/app/globals.css`
+
+---
+
+## 📱 PWA & Favicon Features
+
+The boilerplate includes comprehensive PWA support and adaptive favicon system:
+
+### PWA Features:
+
+- **Web App Manifest** (`/icon/site.webmanifest`) for add-to-home-screen functionality
+- **Touch icons** for iOS devices (Apple Touch Icon)
+- **Web app manifest icons** in multiple sizes (192x192, 512x512)
+- **Application name** and description for PWA installation
+
+### Adaptive Favicons:
+
+- **Light/Dark mode favicons** that automatically switch based on system preference
+- **Standard favicon.ico** for broad compatibility
+- **PNG favicons** in multiple sizes (96x96) for modern browsers
+- **Automatic system detection** via CSS `prefers-color-scheme`
+
+### Icon Files:
+
+- `favicon.ico` (15KB) - Standard favicon for all browsers
+- `apple-touch-icon.png` (8.2KB) - iOS home screen icon
+- `icon-96x96.png` (3.3KB) - Light mode favicon
+- `icon-96x96-dark.png` (3.3KB) - Dark mode favicon
+- `web-app-manifest-192x192.png` (9.2KB) - PWA icon small
+- `web-app-manifest-512x512.png` (25KB) - PWA icon large
+- `site.webmanifest` - PWA manifest file
+
+### Metadata Configuration:
+
+All favicon and PWA metadata is configured in `src/app/[locale]/layout.tsx` using Next.js 15+ metadata API for optimal performance and SEO.
 
 ---
 
@@ -143,7 +182,7 @@ src/
         page.tsx               # Catch-all, triggers 404 for unknown subpages
       not-found.tsx            # Localized 404 page
       opengraph-image.tsx      # OG image for homepage
-      layout.tsx               # Locale layout, loads translations & sets direction
+      layout.tsx               # Locale layout with PWA metadata & favicon config
       page.tsx                 # Home page, fully localized, with SEO metadata
   components/
     globals/
@@ -152,13 +191,13 @@ src/
         LocaleSwitcher.tsx     # Dropdown for changing language (with cookie)
         MobileMenu.tsx         # Mobile nav menu (hamburger)
         Navigation.tsx         # Desktop navigation
-        ThemeSelector.tsx      # Theme switcher dropdown with visual indicators
+        ThemeSelector.tsx      # Theme switcher with system detection & visual indicators
   i18n/
     next-sitemap.routingData.js # Routing data for sitemap generation
     request.ts                 # Loads messages for current locale (SSR)
     routing.ts                 # Defines locales, pathnames, i18n navigation
-  middleware.ts                # Redirects and enforces locale paths
-  globals.css                  # Global styles (Tailwind CSS 4 + theme variables)
+  middleware.ts                # Redirects and enforces locale paths (excludes /icon)
+  globals.css                  # Global styles (Tailwind CSS 4 + theme variables + system detection)
 messages/
   de-DE.json                   # German (Germany) translations
   en-US.json                   # English (US) translations
@@ -170,6 +209,14 @@ postcss.config.mjs             # PostCSS config for Tailwind
 tsconfig.json                  # TypeScript configuration
 package.json                   # Dependencies and scripts
 public/
+  icon/                        # PWA and favicon assets
+    favicon.ico                # Standard favicon (15KB)
+    apple-touch-icon.png       # iOS home screen icon (8.2KB)
+    icon-96x96.png             # Light mode favicon (3.3KB)
+    icon-96x96-dark.png        # Dark mode favicon (3.3KB)
+    web-app-manifest-192x192.png # PWA icon small (9.2KB)
+    web-app-manifest-512x512.png # PWA icon large (25KB)
+    site.webmanifest           # PWA manifest file
   robots.txt                   # Generated robots.txt with sitemap reference
   sitemap.xml                  # Generated sitemap index
   sitemap-0.xml               # Generated main sitemap with hreflang tags
@@ -191,6 +238,7 @@ public/
 - Users are redirected to their preferred locale (from cookie or browser) via [`src/middleware.ts`](src/middleware.ts)
 - Changing the language in the `LocaleSwitcher` sets a `NEXT_LOCALE` cookie for one year
 - The middleware handles all locale routing automatically
+- **Icon path exclusion**: The middleware excludes `/icon` paths to prevent interference with PWA and favicon assets
 
 ### Adding a New Locale
 
@@ -226,7 +274,7 @@ Each locale file follows this structure:
     }
   },
   "ThemeSelector": {
-    "default": "Default",
+    "system": "System",
     "nord": "Nord",
     "sakura": "Sakura",
     "midnight": "Midnight",

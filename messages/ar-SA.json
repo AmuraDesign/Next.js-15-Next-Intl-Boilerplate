@@ -48,7 +48,7 @@
     }
   },
   "ThemeSelector": {
-    "default": "افتراضي",
+    "system": "النظام",
     "nord": "شمالي",
     "sakura": "ساكورا",
     "midnight": "منتصف الليل",

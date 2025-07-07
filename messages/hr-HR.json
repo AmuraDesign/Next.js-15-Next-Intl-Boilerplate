@@ -48,7 +48,7 @@
     }
   },
   "ThemeSelector": {
-    "default": "Zadano",
+    "system": "Sustav",
     "nord": "Nord",
     "sakura": "Sakura",
     "midnight": "Ponoć",

@@ -8,6 +8,7 @@
  * - Responsive design (text hidden on mobile)
  * - Theme-aware styling
  * - Hydration-safe implementation
+ * - System theme detection (OS light/dark mode)
  */
 
 'use client';
@@ -24,7 +25,7 @@ import { useTranslations } from 'next-intl';
  * Each theme has a unique color scheme and corresponding icon
  */
 const themes = [
-  { key: 'default', icon: <SunIcon className="w-4 h-4 text-blue-400" />, color: 'bg-[#f7fafc] border-[#2563eb]' },
+  { key: 'system', icon: <SunIcon className="w-4 h-4 text-blue-400" />, color: 'bg-gray-200 border-gray-400' },
   { key: 'nord', icon: <GlobeAltIcon className="w-4 h-4 text-cyan-400" />, color: 'bg-[#2e3440] border-[#88c0d0]' },
   { key: 'sakura', icon: <SparklesIcon className="w-4 h-4 text-pink-400" />, color: 'bg-[#fff0f6] border-[#f472b6]' },
   { key: 'midnight', icon: <FireIcon className="w-4 h-4 text-purple-400" />, color: 'bg-[#161622] border-[#7f5af0]' },
@@ -36,11 +37,11 @@ type ThemeKey = typeof themes[number]['key'];
 
 /**
  * Helper function to get initial theme from localStorage
- * Returns 'default' if no theme is stored or if running on server
+ * Returns 'system' if no theme is stored or if running on server
  */
 function getInitialTheme(): ThemeKey {
-  if (typeof window === 'undefined') return 'default';
-  return (localStorage.getItem('theme') as ThemeKey) || 'default';
+  if (typeof window === 'undefined') return 'system';
+  return (localStorage.getItem('theme') as ThemeKey) || 'system';
 }
 
 /**
@@ -48,24 +49,38 @@ function getInitialTheme(): ThemeKey {
  * 
  * Manages theme state and applies selected theme to the document
  * Handles hydration safely to prevent SSR/client mismatch
+ * Supports system theme detection for OS light/dark mode
  */
 export default function ThemeSelector() {
   // Hydration fix: Hide component until client-side
   const [hydrated, setHydrated] = useState(false);
-  const [theme, setTheme] = useState<ThemeKey>('default');
+  const [theme, setTheme] = useState<ThemeKey>('system');
   const t = useTranslations('ThemeSelector');
 
-  // Initialize theme and hydration
+  // Initialize theme and hydration - set DOM attribute immediately
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', getInitialTheme());
+    const t = getInitialTheme();
+    setTheme(t);
+    // Das Attribut *sofort* beim ersten Render setzen!
+    if (t === 'system') {
+      document.documentElement.removeAttribute('data-theme');
+    } else {
+      document.documentElement.setAttribute('data-theme', t);
+    }
     setHydrated(true);
   }, []);
 
   // Apply theme changes to document and localStorage
   useEffect(() => {
     if (!hydrated) return;
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+    
+    if (theme === 'system') {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', theme);
+    } else {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    }
   }, [theme, hydrated]);
 
   // Find current theme configuration

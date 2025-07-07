@@ -48,7 +48,7 @@
     }
   },
   "ThemeSelector": {
-    "default": "Parazgjedhur",
+    "system": "Sistemi",
     "nord": "Nord",
     "sakura": "Sakura",
     "midnight": "Mesnatë",
