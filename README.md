@@ -11,25 +11,28 @@
 - **PostCSS 8** – for Tailwind
 - **ESLint 9** + `eslint-config-next` – code quality & formatting
 - **Cookie-based locale persistence**
+- **Theme system** with 6 pre-configured themes (default, nord, sakura, midnight, earthy, dark)
 - **Automatic SEO & Open Graph (OG) image generation**
 - **Automatic multilingual sitemap generation** with hreflang support
-- **Full SSG/SSR/ISR support**
+- **Full SSG/SSR/ISR support** with `generateStaticParams` and `dynamic = 'auto'`
 
 ---
 
-A professional, modern starter for **Next.js 15** apps with **fully dynamic internationalization (i18n)** using [next-intl](https://next-intl-docs.vercel.app/), SEO best practices, localizable metadata, Open Graph images per page & locale, and robust 404/catch-all handling.
-Ideal for multilingual SaaS, corporate sites, and any app where localization, SEO, and user experience matter.
+A professional, modern starter for **Next.js 15** apps with **fully dynamic internationalization (i18n)** using [next-intl](https://next-intl-docs.vercel.app/), SEO best practices, localizable metadata, Open Graph images per page & locale, theme system, and robust 404/catch-all handling.
+Ideal for multilingual SaaS, corporate sites, and any app where localization, SEO, user experience, and theming matter.
 
 ## ✨ Features
 
-- **Full SSR/SSG support** using Next.js App Router (15.x)
+- **Full SSR/SSG support** using `generateStaticParams` and `dynamic = 'auto'`, which enables static generation, aber automatisch auf SSR zurückfällt, wenn es nötig ist (z.B. für übersetzte Metadaten oder dynamisches SEO). So ist die Seite immer optimal schnell und flexibel – ohne manuelle Anpassung.
 - **Dynamic locale subpaths** (e.g., `/de-CH/ueber-uns`, `/en-US/about`, `/fr-FR/a-propos`, `/ar-SA/عنّا`)
 - **Locale-aware navigation** and links everywhere, using next-intl
+- **Theme system** with 6 beautiful themes and persistent localStorage storage
 - **SEO: Localized metadata** (`generateMetadata` API) for every page
 - **Dynamic Open Graph images** (OG) – rendered per page and per locale, with translation
 - **Automatic language detection** and locale redirect via middleware (incl. cookie support)
 - **Custom 404 page** (localized), plus robust `[...rest]` catch-all route
 - **Locale switcher** that persists preference in a cookie
+- **Theme selector** with visual indicators and persistent storage
 - **Responsive navigation:** desktop & mobile menus with translation
 - **Production-ready folder structure:** easy to extend with new pages and locales
 - **TypeScript**, ESLint and Tailwind CSS (v4)
@@ -60,7 +63,7 @@ pnpm install   # or npm install or yarn
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). You'll be auto-redirected to your preferred locale, and can switch between all configured languages.
+Open [http://localhost:3000](http://localhost:3000). You'll be auto-redirected to your preferred locale, and can switch between all configured languages and themes.
 
 ### 3. Available Scripts
 
@@ -85,7 +88,7 @@ The boilerplate comes with **13 pre-configured locales**:
 | `de-CH` | German   | Switzerland    | `/de-CH/ueber-uns`      |
 | `de-AT` | German   | Austria        | `/de-AT/ueber-uns`      |
 | `en-US` | English  | United States  | `/en-US/about`          |
-| `en-UK` | English  | United Kingdom | `/en-UK/about`          |
+| `en-GB` | English  | United Kingdom | `/en-GB/about`          |
 | `fr-FR` | French   | France         | `/fr-FR/a-propos`       |
 | `it-IT` | Italian  | Italy          | `/it-IT/chi-siamo`      |
 | `es-ES` | Spanish  | Spain          | `/es-ES/sobre-nosotros` |
@@ -94,6 +97,36 @@ The boilerplate comes with **13 pre-configured locales**:
 | `hr-HR` | Croatian | Croatia        | `/hr-HR/o-nama`         |
 | `bs-BA` | Bosnian  | Bosnia         | `/bs-BA/o-nama`         |
 | `ar-SA` | Arabic   | Saudi Arabia   | `/ar-SA/عنّا`           |
+
+---
+
+## 🎨 Theme System
+
+The boilerplate includes a comprehensive theme system with **6 pre-configured themes**:
+
+| Theme      | Description               | Visual Style           |
+| ---------- | ------------------------- | ---------------------- |
+| `default`  | Clean, modern light theme | Blue accent colors     |
+| `nord`     | Arctic-inspired theme     | Cyan and cool tones    |
+| `sakura`   | Soft, pink-inspired theme | Pink and gentle colors |
+| `midnight` | Deep, rich dark theme     | Purple and dark tones  |
+| `earthy`   | Natural, warm theme       | Amber and earth tones  |
+| `dark`     | Classic dark theme        | Gray and blue accents  |
+
+### Features:
+
+- **Persistent storage** via localStorage
+- **Visual indicators** with color-coded theme previews
+- **Hydration-safe** implementation
+- **Responsive design** (text hidden on mobile)
+- **Theme-aware styling** using CSS variables
+- **Smooth transitions** between themes
+
+### Adding Custom Themes:
+
+1. Add theme definition to `src/components/globals/header/ThemeSelector.tsx`
+2. Add translations to all locale files in `/messages/`
+3. Define CSS variables for your theme in `src/app/globals.css`
 
 ---
 
@@ -113,16 +146,19 @@ src/
       layout.tsx               # Locale layout, loads translations & sets direction
       page.tsx                 # Home page, fully localized, with SEO metadata
   components/
-    Header.tsx                 # Sticky app bar with navigation & locale switcher
-    LocaleSwitcher.tsx         # Dropdown for changing language (with cookie)
-    MobileMenu.tsx             # Mobile nav menu (hamburger)
-    Navigation.tsx             # Desktop navigation
+    globals/
+      header/
+        Header.tsx             # Main header with navigation, locale & theme switchers
+        LocaleSwitcher.tsx     # Dropdown for changing language (with cookie)
+        MobileMenu.tsx         # Mobile nav menu (hamburger)
+        Navigation.tsx         # Desktop navigation
+        ThemeSelector.tsx      # Theme switcher dropdown with visual indicators
   i18n/
     next-sitemap.routingData.js # Routing data for sitemap generation
     request.ts                 # Loads messages for current locale (SSR)
     routing.ts                 # Defines locales, pathnames, i18n navigation
   middleware.ts                # Redirects and enforces locale paths
-  globals.css                  # Global styles (Tailwind CSS 4)
+  globals.css                  # Global styles (Tailwind CSS 4 + theme variables)
 messages/
   de-DE.json                   # German (Germany) translations
   en-US.json                   # English (US) translations
@@ -188,6 +224,15 @@ Each locale file follows this structure:
       "openMenu": "Open menu",
       "closeMenu": "Close menu"
     }
+  },
+  "ThemeSelector": {
+    "default": "Default",
+    "nord": "Nord",
+    "sakura": "Sakura",
+    "midnight": "Midnight",
+    "earthy": "Earthy",
+    "dark": "Dark",
+    "changeTheme": "Change theme"
   }
 }
 ```
@@ -205,6 +250,18 @@ Create a new folder in `src/app/[locale]/` for your page:
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
+import { routing } from "@/i18n/routing";
+
+// Generate static params for all supported locales (enables SSG)
+export async function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+// Allow Next.js to statically generate this page if possible (default behavior)
+export const dynamic = "auto"; // Enable static generation when possible, fallback to dynamic if needed
+
+// Optional: Use revalidate if you want ISR (Incremental Static Regeneration)
+// export const revalidate = 3600; // Rebuild every hour (optional)
 
 export async function generateMetadata({
   params,
@@ -251,7 +308,7 @@ pathnames: {
 
 ### 3. Add Navigation Links
 
-Update `src/components/Navigation.tsx` and `src/components/MobileMenu.tsx`:
+Update `src/components/globals/header/Navigation.tsx` and `src/components/globals/header/MobileMenu.tsx`:
 
 ```typescript
 <Link href="/contact" className="...">
@@ -304,6 +361,14 @@ const pathnames = {
 - Uses **`generateMetadata`** (Next.js 15+) for per-locale, per-page SEO tags
 - **Open Graph (OG) images** are generated **dynamically** per page and locale
 - Twitter Card metadata included as well
+
+### Next.js 15 Static Generation
+
+The boilerplate leverages Next.js 15's enhanced static generation features:
+
+- **`generateStaticParams`** - Pre-generates pages for all locales at build time
+- **`dynamic = 'auto'`** - Enables static generation when possible, falls back to dynamic rendering
+- **`revalidate`** - Optional ISR (Incremental Static Regeneration) for time-based updates
 
 ### Open Graph Images
 
@@ -395,6 +460,7 @@ If not set, `http://localhost:3000` is used as default.
 - **Desktop navigation**: Always visible on `md+` screens, fully localized
 - **Mobile menu**: Hamburger button with a translated menu, closes on link click
 - **Locale switcher**: Dropdown, shows flag and language, sets cookie and navigates instantly
+- **Theme selector**: Dropdown with visual theme indicators, persistent localStorage storage
 
 ---
 
@@ -451,6 +517,8 @@ export default config;
 - **SEO and social sharing** work for every language, everywhere
 - **Use namespaces** in translation files for better organization
 - **Always await params** in Next.js 15 App Router functions
+- **Theme system** uses CSS variables for consistent theming across components
+- **Static generation** with `generateStaticParams` for optimal performance
 
 ---
 

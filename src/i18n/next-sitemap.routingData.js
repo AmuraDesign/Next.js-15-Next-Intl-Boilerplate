@@ -8,7 +8,7 @@ const locales = [
   "de-CH",
   "de-AT", // German variants
   "en-US",
-  "en-UK", // English variants
+  "en-GB", // English variants
   "es-ES", // Spanish
   "tr-TR", // Turkish
   "sq-AL", // Albanian
@@ -28,7 +28,7 @@ const pathnames = {
     "de-CH": "/",
     "de-AT": "/",
     "en-US": "/",
-    "en-UK": "/",
+    "en-GB": "/",
     "fr-FR": "/",
     "it-IT": "/",
     "es-ES": "/",
@@ -44,7 +44,7 @@ const pathnames = {
     "de-CH": "/ueber-uns", // Swiss German: "About us"
     "de-AT": "/ueber-uns", // Austrian German: "About us"
     "en-US": "/about", // US English: "About"
-    "en-UK": "/about", // UK English: "About"
+    "en-GB": "/about", // UK English: "About"
     "fr-FR": "/a-propos", // French: "About"
     "it-IT": "/chi-siamo", // Italian: "Who we are"
     "es-ES": "/sobre-nosotros", // Spanish: "About us"

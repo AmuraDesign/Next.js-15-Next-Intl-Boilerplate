@@ -1,38 +1,59 @@
 {
-    "HomePage": {
-      "title": "Merhaba Dünya!",
-      "about": "About sayfasına git",
-      "meta": {
-        "title": "Next.js 15 Next-Intl Boilerplate - Hoş Geldiniz",
-        "description": "Kapsamlı uluslararasılaştırma desteği ile çok dilli Next.js 15 uygulamaları oluşturmak için modern, üretim hazır bir boilerplate.",
-        "ogImageTitle": "Next.js 15'e Hoş Geldiniz",
-        "ogImageDescription": "Kapsamlı uluslararasılaştırma desteği ile çok dilli Next.js 15 uygulamaları oluşturmak için modern, üretim hazır bir boilerplate.",
-        "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
-      }
+  "HomePage": {
+    "title": "Merhaba Dünya!",
+    "about": "About sayfasına git",
+    "meta": {
+      "title": "Next.js 15 Next-Intl Boilerplate - Hoş Geldiniz",
+      "description": "Kapsamlı uluslararasılaştırma desteği ile çok dilli Next.js 15 uygulamaları oluşturmak için modern, üretim hazır bir boilerplate.",
+      "ogImageTitle": "Next.js 15'e Hoş Geldiniz",
+      "ogImageDescription": "Kapsamlı uluslararasılaştırma desteği ile çok dilli Next.js 15 uygulamaları oluşturmak için modern, üretim hazır bir boilerplate.",
+      "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
     },
-    "Header": {
-      "navigation": {
-        "home": "Ana Sayfa",
-        "about": "Hakkımızda",
-        "openMenu": "Menüyü aç",
-        "closeMenu": "Menüyü kapat"
-      }
-    },
-    "NotFoundPage": {
-      "title": "Sayfa Bulunamadı",
-      "description": "Üzgünüz, aradığınız sayfa bulunamadı.",
-      "backToHome": "Ana Sayfaya Dön"
-    },
-    "AboutPage": {
-      "title": "Hakkımızda",
-      "content": "Hakkımızda sayfamıza hoş geldiniz! Burada şirketimiz ve misyonumuz hakkında daha fazla bilgi edinebilirsiniz.",
-      "meta": {
-        "title": "Hakkımızda - Next.js 15 Next-Intl Boilerplate",
-        "description": "Şirketimiz ve misyonumuz hakkında daha fazla bilgi edinin. Modern çok dilli Next.js uygulamaları nasıl oluşturduğumuzu keşfedin.",
-        "ogTitle": "Hakkımızda - Next.js 15 Next-Intl Boilerplate",
-        "ogImageTitle": "Hakkımızda",
-        "ogImageDescription": "Şirketimiz ve misyonumuz hakkında daha fazla bilgi edinin. Modern çok dilli Next.js uygulamaları nasıl oluşturduğumuzu keşfedin.",
-        "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
-      }
+    "themeDemo": {
+      "title": "Tema gösterimi",
+      "primaryColor": "Birincil renk",
+      "primaryDescription": "Temanın birincil rengini kullanır",
+      "secondaryColor": "İkincil renk",
+      "secondaryDescription": "Temanın ikincil rengini kullanır",
+      "accentColor": "Vurgu rengi",
+      "accentDescription": "Temanın vurgu rengini kullanır",
+      "primaryButton": "Birincil düğme",
+      "secondaryButton": "İkincil düğme",
+      "accentButton": "Vurgu düğmesi"
     }
+  },
+  "Header": {
+    "navigation": {
+      "home": "Ana Sayfa",
+      "about": "Hakkımızda",
+      "openMenu": "Menüyü aç",
+      "closeMenu": "Menüyü kapat"
+    }
+  },
+  "NotFoundPage": {
+    "title": "Sayfa Bulunamadı",
+    "description": "Üzgünüz, aradığınız sayfa bulunamadı.",
+    "backToHome": "Ana Sayfaya Dön"
+  },
+  "AboutPage": {
+    "title": "Hakkımızda",
+    "content": "Hakkımızda sayfamıza hoş geldiniz! Burada şirketimiz ve misyonumuz hakkında daha fazla bilgi edinebilirsiniz.",
+    "meta": {
+      "title": "Hakkımızda - Next.js 15 Next-Intl Boilerplate",
+      "description": "Şirketimiz ve misyonumuz hakkında daha fazla bilgi edinin. Modern çok dilli Next.js uygulamaları nasıl oluşturduğumuzu keşfedin.",
+      "ogTitle": "Hakkımızda - Next.js 15 Next-Intl Boilerplate",
+      "ogImageTitle": "Hakkımızda",
+      "ogImageDescription": "Şirketimiz ve misyonumuz hakkında daha fazla bilgi edinin. Modern çok dilli Next.js uygulamaları nasıl oluşturduğumuzu keşfedin.",
+      "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
+    }
+  },
+  "ThemeSelector": {
+    "default": "Varsayılan",
+    "nord": "Nord",
+    "sakura": "Sakura",
+    "midnight": "Gece Yarısı",
+    "earthy": "Toprak",
+    "dark": "Koyu",
+    "changeTheme": "Temayı değiştir"
   }
+}

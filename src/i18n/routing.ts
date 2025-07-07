@@ -7,7 +7,7 @@ import { createNavigation } from 'next-intl/navigation';
 // List of all supported locales for the application
 export const locales = [
   'de-DE', 'de-CH', 'de-AT',  // German (Germany, Switzerland, Austria)
-  'en-US', 'en-UK',           // English (US, UK)
+  'en-US', 'en-GB',           // English (US, GB)
   'es-ES',                    // Spanish
   'tr-TR',                    // Turkish
   'sq-AL',                    // Albanian
@@ -36,7 +36,7 @@ export const routing = defineRouting({
       'de-CH': '/',
       'de-AT': '/',
       'en-US': '/',
-      'en-UK': '/',
+      'en-GB': '/',
       'fr-FR': '/',
       'it-IT': '/',
       'es-ES': '/',
@@ -51,7 +51,7 @@ export const routing = defineRouting({
       'de-CH': '/ueber-uns',
       'de-AT': '/ueber-uns',
       'en-US': '/about',
-      'en-UK': '/about',
+      'en-GB': '/about',
       'fr-FR': '/a-propos',
       'it-IT': '/chi-siamo',
       'es-ES': '/sobre-nosotros',

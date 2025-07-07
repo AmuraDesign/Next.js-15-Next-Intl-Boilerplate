@@ -1,1 +1,60 @@
 @import "tailwindcss";
+
+/* 1. Default (Light) */
+@theme {
+  --color-background: #f7fafc;
+  --color-foreground: #23272e;
+  --color-primary: #2563eb;
+  --color-secondary: #14b8a6;
+  --color-accent: #eab308;
+  --color-muted: #e5e7eb;
+}
+
+/* 2. Nord */
+@layer base {
+  [data-theme="nord"] {
+    --color-background: #2e3440;
+    --color-foreground: #eceff4;
+    --color-primary: #88c0d0;
+    --color-secondary: #b48ead;
+    --color-accent: #a3be8c;
+    --color-muted: #434c5e;
+  }
+  /* 3. Sakura */
+  [data-theme="sakura"] {
+    --color-background: #fff0f6;
+    --color-foreground: #292524;
+    --color-primary: #f472b6;
+    --color-secondary: #fb7185;
+    --color-accent: #fbbf24;
+    --color-muted: #fbcfe8;
+  }
+  /* 4. Midnight Neon */
+  [data-theme="midnight"] {
+    --color-background: #161622;
+    --color-foreground: #e0e7ff;
+    --color-primary: #7f5af0;
+    --color-secondary: #2cb67d;
+    --color-accent: #f7971e;
+    --color-muted: #363a4f;
+  }
+  /* 5. Earthy */
+  [data-theme="earthy"] {
+    --color-background: #ede9dd;
+    --color-foreground: #312e2b;
+    --color-primary: #94734b;
+    --color-secondary: #718355;
+    --color-accent: #b47b84;
+    --color-muted: #d4cfc2;
+  }
+  /* 6. Dark */
+  [data-theme="dark"] {
+    --color-background: #18181b;
+    --color-foreground: #e4e4e7;
+    --color-primary: #2563eb;
+    --color-secondary: #a21caf;
+    --color-accent: #22d3ee;
+    --color-muted: #27272a;
+  }
+
+}

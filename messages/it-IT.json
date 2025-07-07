@@ -1,38 +1,59 @@
 {
-    "HomePage": {
-      "title": "Benvenuto!",
-      "about": "Vai alla pagina di about",
-      "meta": {
-        "title": "Next.js 15 Next-Intl Boilerplate - Benvenuto",
-        "description": "Un boilerplate moderno e pronto per la produzione per creare applicazioni Next.js 15 multilingue con supporto completo per l'internazionalizzazione.",
-        "ogImageTitle": "Benvenuto in Next.js 15",
-        "ogImageDescription": "Un boilerplate moderno e pronto per la produzione per creare applicazioni Next.js 15 multilingue con supporto completo per l'internazionalizzazione.",
-        "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
-      }
+  "HomePage": {
+    "title": "Benvenuto!",
+    "about": "Vai alla pagina di about",
+    "meta": {
+      "title": "Next.js 15 Next-Intl Boilerplate - Benvenuto",
+      "description": "Un boilerplate moderno e pronto per la produzione per creare applicazioni Next.js 15 multilingue con supporto completo per l'internazionalizzazione.",
+      "ogImageTitle": "Benvenuto in Next.js 15",
+      "ogImageDescription": "Un boilerplate moderno e pronto per la produzione per creare applicazioni Next.js 15 multilingue con supporto completo per l'internazionalizzazione.",
+      "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
     },
-    "Header": {
-      "navigation": {
-        "home": "Home",
-        "about": "About",
-        "openMenu": "Apri menu",
-        "closeMenu": "Chiudi menu"
-      }
-    },
-    "NotFoundPage": {
-      "title": "Pagina non trovata",
-      "description": "Spiacenti, la pagina richiesta non è stata trovata.",
-      "backToHome": "Torna alla home"
-    },
-    "AboutPage": {
-      "title": "Chi siamo",
-      "content": "Benvenuto nella nostra pagina Chi siamo! Qui puoi saperne di più sulla nostra azienda e la nostra missione.",
-      "meta": {
-        "title": "Chi siamo - Next.js 15 Next-Intl Boilerplate",
-        "description": "Scopri di più sulla nostra azienda e missione. Scopri come creiamo applicazioni Next.js multilingue moderne.",
-        "ogTitle": "Chi siamo - Next.js 15 Next-Intl Boilerplate",
-        "ogImageTitle": "Chi siamo",
-        "ogImageDescription": "Scopri di più sulla nostra azienda e missione. Scopri come creiamo applicazioni Next.js multilingue moderne.",
-        "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
-      }
+    "themeDemo": {
+      "title": "Dimostrazione del tema",
+      "primaryColor": "Colore primario",
+      "primaryDescription": "Usa il colore primario del tema",
+      "secondaryColor": "Colore secondario",
+      "secondaryDescription": "Usa il colore secondario del tema",
+      "accentColor": "Colore di accento",
+      "accentDescription": "Usa il colore di accento del tema",
+      "primaryButton": "Pulsante primario",
+      "secondaryButton": "Pulsante secondario",
+      "accentButton": "Pulsante di accento"
     }
+  },
+  "Header": {
+    "navigation": {
+      "home": "Home",
+      "about": "About",
+      "openMenu": "Apri menu",
+      "closeMenu": "Chiudi menu"
+    }
+  },
+  "NotFoundPage": {
+    "title": "Pagina non trovata",
+    "description": "Spiacenti, la pagina richiesta non è stata trovata.",
+    "backToHome": "Torna alla home"
+  },
+  "AboutPage": {
+    "title": "Chi siamo",
+    "content": "Benvenuto nella nostra pagina Chi siamo! Qui puoi saperne di più sulla nostra azienda e la nostra missione.",
+    "meta": {
+      "title": "Chi siamo - Next.js 15 Next-Intl Boilerplate",
+      "description": "Scopri di più sulla nostra azienda e missione. Scopri come creiamo applicazioni Next.js multilingue moderne.",
+      "ogTitle": "Chi siamo - Next.js 15 Next-Intl Boilerplate",
+      "ogImageTitle": "Chi siamo",
+      "ogImageDescription": "Scopri di più sulla nostra azienda e missione. Scopri come creiamo applicazioni Next.js multilingue moderne.",
+      "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
+    }
+  },
+  "ThemeSelector": {
+    "default": "Predefinito",
+    "nord": "Nord",
+    "sakura": "Sakura",
+    "midnight": "Mezzanotte",
+    "earthy": "Terroso",
+    "dark": "Scuro",
+    "changeTheme": "Cambia tema"
   }
+}

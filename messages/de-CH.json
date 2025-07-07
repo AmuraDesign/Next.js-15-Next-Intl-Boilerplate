@@ -1,38 +1,59 @@
 {
-    "HomePage": {
-      "title": "Grüezi Welt!",
-      "about": "Gehe zur About-Seite",
-      "meta": {
-        "title": "Next.js 15 Next-Intl Boilerplate - Willkommen",
-        "description": "Ein modernes, produktionsreifes Boilerplate für die Erstellung mehrsprachiger Next.js 15-Anwendungen mit umfassender Internationalisierungsunterstützung.",
-        "ogImageTitle": "Willkommen zu Next.js 15",
-        "ogImageDescription": "Ein modernes, produktionsreifes Boilerplate für die Erstellung mehrsprachiger Next.js 15-Anwendungen mit umfassender Internationalisierungsunterstützung.",
-        "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
-      }
+  "HomePage": {
+    "title": "Grüezi Welt!",
+    "about": "Gehe zur About-Seite",
+    "meta": {
+      "title": "Next.js 15 Next-Intl Boilerplate - Willkommen",
+      "description": "Ein modernes, produktionsreifes Boilerplate für die Erstellung mehrsprachiger Next.js 15-Anwendungen mit umfassender Internationalisierungsunterstützung.",
+      "ogImageTitle": "Willkommen zu Next.js 15",
+      "ogImageDescription": "Ein modernes, produktionsreifes Boilerplate für die Erstellung mehrsprachiger Next.js 15-Anwendungen mit umfassender Internationalisierungsunterstützung.",
+      "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
     },
-    "Header": {
-      "navigation": {
-        "home": "Startseite",
-        "about": "Über uns",
-        "openMenu": "Menü öffnen",
-        "closeMenu": "Menü schliessen"
-      }
-    },
-    "NotFoundPage": {
-      "title": "Seite nicht gefunden",
-      "description": "Die angeforderte Seite konnte leider nicht gefunden werden.",
-      "backToHome": "Zurück zur Startseite"
-    },
-    "AboutPage": {
-      "title": "Über uns",
-      "content": "Willkommen auf unserer About-Seite! Hier erfahren Sie mehr über unser Unternehmen und unsere Mission.",
-      "meta": {
-        "title": "Über uns - Next.js 15 Next-Intl Boilerplate",
-        "description": "Erfahren Sie mehr über unser Unternehmen und unsere Mission. Entdecken Sie, wie wir moderne mehrsprachige Next.js-Anwendungen erstellen.",
-        "ogTitle": "Über uns - Next.js 15 Next-Intl Boilerplate",
-        "ogImageTitle": "Über uns",
-        "ogImageDescription": "Erfahren Sie mehr über unser Unternehmen und unsere Mission. Entdecken Sie, wie wir moderne mehrsprachige Next.js-Anwendungen erstellen.",
-        "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
-      }
+    "themeDemo": {
+      "title": "Theme-Demonstration",
+      "primaryColor": "Primärfarbe",
+      "primaryDescription": "Verwendet die primäre Theme-Farbe",
+      "secondaryColor": "Sekundärfarbe",
+      "secondaryDescription": "Verwendet die sekundäre Theme-Farbe",
+      "accentColor": "Akzentfarbe",
+      "accentDescription": "Verwendet die Akzent-Theme-Farbe",
+      "primaryButton": "Primärer Button",
+      "secondaryButton": "Sekundärer Button",
+      "accentButton": "Akzent-Button"
     }
+  },
+  "Header": {
+    "navigation": {
+      "home": "Startseite",
+      "about": "Über uns",
+      "openMenu": "Menü öffnen",
+      "closeMenu": "Menü schliessen"
+    }
+  },
+  "NotFoundPage": {
+    "title": "Seite nicht gefunden",
+    "description": "Die angeforderte Seite konnte leider nicht gefunden werden.",
+    "backToHome": "Zurück zur Startseite"
+  },
+  "AboutPage": {
+    "title": "Über uns",
+    "content": "Willkommen auf unserer About-Seite! Hier erfahren Sie mehr über unser Unternehmen und unsere Mission.",
+    "meta": {
+      "title": "Über uns - Next.js 15 Next-Intl Boilerplate",
+      "description": "Erfahren Sie mehr über unser Unternehmen und unsere Mission. Entdecken Sie, wie wir moderne mehrsprachige Next.js-Anwendungen erstellen.",
+      "ogTitle": "Über uns - Next.js 15 Next-Intl Boilerplate",
+      "ogImageTitle": "Über uns",
+      "ogImageDescription": "Erfahren Sie mehr über unser Unternehmen und unsere Mission. Entdecken Sie, wie wir moderne mehrsprachige Next.js-Anwendungen erstellen.",
+      "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
+    }
+  },
+  "ThemeSelector": {
+    "default": "Standard",
+    "nord": "Nord",
+    "sakura": "Sakura",
+    "midnight": "Mitternacht",
+    "earthy": "Erdig",
+    "dark": "Dunkel",
+    "changeTheme": "Theme wechseln"
   }
+}

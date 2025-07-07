@@ -2,6 +2,18 @@
     "HomePage": {
       "title": "Bienvenido!",
       "about": "Ir a la página de about",
+      "themeDemo": {
+        "title": "Demostración de tema",
+        "primaryColor": "Color primario",
+        "primaryDescription": "Usa el color primario del tema",
+        "secondaryColor": "Color secundario",
+        "secondaryDescription": "Usa el color secundario del tema",
+        "accentColor": "Color de acento",
+        "accentDescription": "Usa el color de acento del tema",
+        "primaryButton": "Botón primario",
+        "secondaryButton": "Botón secundario",
+        "accentButton": "Botón de acento"
+      },
       "meta": {
         "title": "Next.js 15 Next-Intl Boilerplate - Bienvenido",
         "description": "Un boilerplate moderno y listo para producción para crear aplicaciones Next.js 15 multilingües con soporte completo de internacionalización.",
@@ -34,5 +46,14 @@
         "ogImageDescription": "Conoce más sobre nuestra empresa y misión. Descubre cómo creamos aplicaciones Next.js multilingües modernas.",
         "ogImageBrand": "Next.js 15 Next-Intl Boilerplate"
       }
+    },
+    "ThemeSelector": {
+      "default": "Predeterminado",
+      "nord": "Norte",
+      "sakura": "Sakura",
+      "midnight": "Medianoche",
+      "earthy": "Terroso",
+      "dark": "Oscuro",
+      "changeTheme": "Cambiar tema"
     }
   }
